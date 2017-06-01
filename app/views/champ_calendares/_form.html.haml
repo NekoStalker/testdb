@@ -1,0 +1,51 @@
+= form_for @champ_calendare do |f|
+  - if @champ_calendare.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@champ_calendare.errors.count, "error")} prohibited this champ_calendare from being saved:"
+      %ul
+        - @champ_calendare.errors.full_messages.each do |message|
+          %li= message
+  .container
+    .row
+      .col-md-6
+        .form-group
+          = f.label :champ_name
+          .input-group
+          = f.text_area :champ_name, class: 'form-control'
+          %span.input-group-addon
+            %span.fa.fa-futbol-o
+      .col-md-4
+        .form-group
+          = f.label :numb
+          = f.number_field :numb, class: 'form-control'
+    .row
+      .col-md-4
+        .form-group
+          = f.label :start_date
+          .input-group.date.datepicker
+            = f.text_field(:start_date, value: lnil(f.object.start_date),
+            class: 'form-control')
+            %span.input-group-addon
+              %span.glyphicon.glyphicon-calendar
+    .row
+      .col-md-6
+        .form-group
+          = f.label :country
+          .input-group
+          = f.text_area :country, class: 'form-control'
+          %span.input-group-addon
+            %span.fa.fa-map-o
+    .row
+      .col-md-6
+        .form-group
+          = f.label :place
+          .input-group
+          = f.text_area :place, class: 'form-control'
+          %span.input-group-addon
+            %span.fa.fa-university
+        .from-control
+          = f.submit 'Сохранить', class: 'btn btn-primary'
+        - @champ_calendare.errors.full_messages.each do |msg|
+          %li= msg
+
+

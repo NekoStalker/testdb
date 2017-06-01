@@ -1,0 +1,57 @@
+=breadcrumb_tag do
+  %li.active
+    = link_to t('app.team'), teams_path
+.page-header
+  %h1= t('headers.team.index')
+.container
+  .row
+    .col-md-10
+      %table.table.table-hover.table-bordered
+        %caption
+          = link_to new_team_path, class: 'btn btn-success' do
+            = fa_icon :plus
+            = t('buttons.new.team')
+        %thead
+          %tr
+            %th
+              = t('activerecord.attributes.team.name')
+            %th
+              = t('activerecord.attributes.champ_racer.fn')
+            %th
+              = t('activerecord.attributes.champ_racer.sn')
+            %th
+              = t('activerecord.attributes.champ_racer1.fn')
+            %th
+              = t('activerecord.attributes.champ_racer1.sn')
+            %th
+              = t('activerecord.attributes.team.numbr1')
+            %th
+              = t('activerecord.attributes.team.numbr2')
+            %th
+              = t('activerecord.attributes.team.country')
+            %th
+              = t('activerecord.attributes.team.engine_prod')
+        %tbody
+          - @teams.each do |team|
+            %tr
+              %td.center= team.name
+              %td.center= team.champ_racer.fn
+              %td.center= team.champ_racer.sn
+              %td.center= team.champ_racer1.fn
+              %td.center= team.champ_racer1.sn
+              %td.center= team.numbr1
+              %td.center= team.numbr2
+              %td.center= team.country
+              %td.center= team.engine_prod
+              %td.right
+                = link_to edit_team_path(team), class: 'btn btn-primary' do
+                  = fa_icon :edit
+                  = t('buttons.edit')
+                = link_to team, class: 'btn btn-info' do
+                  = fa_icon "eye"
+                  = t('buttons.show')
+                = link_to team, :method => :delete, :data => { :confirm => t('buttons.confirm.team') }, class: 'btn btn-danger' do
+                  = fa_icon :times
+                  = t('buttons.destroy')
+
+

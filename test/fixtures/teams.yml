@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  engine_prod: MyText
+  champ_racer_id: 
+  champ_racer1_id: 
+  numbr1: 1
+  numbr2: 1
+  country: MyText
+
+two:
+  name: MyText
+  engine_prod: MyText
+  champ_racer_id: 
+  champ_racer1_id: 
+  numbr1: 1
+  numbr2: 1
+  country: MyText

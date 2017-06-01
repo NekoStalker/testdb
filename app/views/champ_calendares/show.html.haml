@@ -1,0 +1,38 @@
+
+=breadcrumb_tag do
+  %li.active
+    = link_to t('app.champ_calendare'), champ_calendares_path
+  %li
+    = @champ_calendare.id
+.panel.panel-default
+  .panel-heading
+  .panel-body
+    = link_to  edit_champ_calendare_path(@champ_calendare), class: 'btn btn-primary' do
+      = fa_icon :edit
+      = t('buttons.edit')
+    = link_to  champ_calendares_path, class: 'btn btn-warning' do
+      = fa_icon :backward
+      = t('buttons.back')
+  .list-group
+    %p.list-group-item
+      %b Название чемпионата:
+      %span.badge
+        = @champ_calendare.champ_name
+    %p.list-group-item
+      %b Номер Чемпионата:
+      %span.badge
+        = @champ_calendare.numb
+    %p.list-group-item
+      %b Дата начала
+      %span.badge
+        = @champ_calendare.start_date
+    %p.list-group-item
+      %b Страна
+      %span.badge
+        = @champ_calendare.country
+    %p.list-group-item
+      %b Место
+      %span.badge
+        = @champ_calendare.place
+
+

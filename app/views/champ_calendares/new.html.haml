@@ -1,0 +1,12 @@
+
+=breadcrumb_tag do
+  %li.active
+    = link_to t('app.champ_calendare'), champ_calendares_path
+  %li
+    = t('headers.champ_calendare.new')
+.page-header
+  %h1= t('headers.champ_calendare.new')
+
+= render 'form'
+
+

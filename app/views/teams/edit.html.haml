@@ -1,0 +1,18 @@
+=breadcrumb_tag do
+  %li.active
+    = t('headers.team.edit')
+  %li
+    = link_to(@team.id)
+  %li
+    Администрирование
+.page-header
+  %h1= t('headers.team.edit')
+
+= render 'form'
+%br
+= link_to @team, class: 'btn btn-info' do
+  = fa_icon :search
+  = t('buttons.show')
+= link_to  teams_path, class: 'btn btn-warning' do
+  = fa_icon :backward
+  = t('buttons.back')

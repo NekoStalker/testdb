@@ -1,0 +1,48 @@
+
+=breadcrumb_tag do
+  %li.active
+    = link_to t('app.champ_calendare'), champ_calendares_path
+
+.page-header
+  %h1= t('headers.champ_calendare.index')
+
+.container
+  .row
+    .col-md-10
+      %table.table.table-hover.table-striped.table-bordered
+        %caption
+          = link_to new_champ_calendare_path, class: 'btn btn-success' do
+            = fa_icon :plus
+            = t('buttons.new.champ_calendare')
+        %thead
+          %tr
+            %th
+              = t('activerecord.attributes.champ_calendare.champ_name')
+            %th
+              = t('activerecord.attributes.champ_calendare.numb')
+            %th
+              = t('activerecord.attributes.champ_calendare.start_date')
+            %th
+              = t('activerecord.attributes.champ_calendare.country')
+            %th
+              = t('activerecord.attributes.champ_calendare.place')
+        %tbody
+          - @champ_calendares.each do |champ_calendare|
+            %tr
+              %td.center= champ_calendare.champ_name
+              %td.center= champ_calendare.numb
+              %td.center= champ_calendare.start_date
+              %td.center= champ_calendare.country
+              %td.center= champ_calendare.place
+              %td.right
+                = link_to edit_champ_calendare_path(champ_calendare), class: 'btn btn-primary' do
+                  = fa_icon :edit
+                  = t('buttons.edit')
+                = link_to champ_calendare, class: 'btn btn-info' do
+                  = fa_icon "eye"
+                  = t('buttons.show')
+                = link_to champ_calendare, :method => :delete, :data => { :confirm => t('buttons.confirm.champ_calendare') }, class: 'btn btn-danger' do
+                  = fa_icon :times
+                  = t('buttons.destroy')
+
+

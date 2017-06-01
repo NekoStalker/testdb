@@ -1,0 +1,38 @@
+=breadcrumb_tag do
+  %li.active
+    = link_to t('headers.champ_racer.search'),  search_champ_racers_path()
+  %li
+    = @champ_racer.id
+.container
+  .row
+    .col-md-10
+      .panel.panel-default
+        .panel-heading
+        .panel-body
+          = link_to  search_champ_racers_path(), class: 'btn btn-warning' do
+            = fa_icon :backward
+            = t('buttons.back')
+        .list-group
+          %p.list-group-item
+            %b Имя гонщика:
+            %span.badge
+              = @champ_racer.fn
+          %p.list-group-item
+            %b Фамилия гонщика:
+            %span.badge
+              = @champ_racer.sn
+          %p.list-group-item
+            %b Дата рождения:
+            %span.badge
+              = @champ_racer.b_date
+          %p.list-group-item
+            %b Страна:
+            %span.badge
+              = @champ_racer.country
+          %p.list-group-item
+            %b Колличество побед:
+            %span.badge
+              = @champ_racer.win_rate
+          
+
+

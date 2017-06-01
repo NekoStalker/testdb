@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fn: MyText
+  sn: MyText
+  b_date: 2017-05-11
+  country: MyText
+  win_rate: 1
+
+two:
+  fn: MyText
+  sn: MyText
+  b_date: 2017-05-11
+  country: MyText
+  win_rate: 1

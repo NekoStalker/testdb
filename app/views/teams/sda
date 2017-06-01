@@ -1,0 +1,36 @@
+=breadcrumb_tag do
+  %li.active
+    = link_to t('app.team'), team_index_path
+
+.page-header
+  %h1= t('headers.team.index')
+%h1 Listing teams
+.container
+  .row
+    .col-md-1
+      %table.table.table-hover.table-bordered
+        %caption
+          = link_to new_team_path, class: 'btn btn-success' do
+            = fa_icon :plus
+            = t('buttons.new.information')
+        %thead
+          %tr
+            %th
+              = t('activerecord.attributes.team.pharmacy')
+            %th
+              = t('activerecord.attributes.medicine.name')
+            %th
+              = t('activerecord.attributes.medicine.dosage')
+            %th
+              = t('activerecord.attributes.medicine.amount')
+            %th
+              = t('activerecord.attributes.medicine.manufacture')
+            %th
+              = t('activerecord.attributes.medicine.recipe')
+            %th
+              = t('activerecord.attributes.medicine.price')
+            %th
+              = t('activerecord.attributes.medicine.category')
+            %th
+              = t('activerecord.attributes.information.quantity')
+            %th

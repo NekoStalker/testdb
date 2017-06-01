@@ -1,0 +1,29 @@
+%h1 Listing champ_racers
+
+%table
+  %thead
+    %tr
+      %th Fn
+      %th Sn
+      %th B date
+      %th Country
+      %th Win rate
+      %th
+      %th
+      %th
+
+  %tbody
+    - @champ_racers.each do |champ_racer|
+      %tr
+        %td= champ_racer.fn
+        %td= champ_racer.sn
+        %td= champ_racer.b_date
+        %td= champ_racer.country
+        %td= champ_racer.win_rate
+        %td= link_to 'Show', champ_racer
+        %td= link_to 'Edit', edit_champ_racer_path(champ_racer)
+        %td= link_to 'Destroy', champ_racer, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Champ racer', new_champ_racer_path

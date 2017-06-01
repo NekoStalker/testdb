@@ -1,0 +1,132 @@
+ru:
+  app:
+    team: Команда
+    champ_calendare: Календарь чемпионата 
+    name: Базовое приложение
+    company:
+      short_name: МПУ
+      department: Кафедра
+    users:
+      index: Список пользователей
+      new-button: Новый пользователь 
+      edit: Редактирование пользователя
+      new: Создание пользователя
+    roles:
+      index: Список возможных ролей пользователей
+      new-button: Новая роль
+      edit: Редактирование роли
+      new: Создание роли
+
+  helpers:
+    submit:
+      create: Сохранить
+      submit: Сохранить
+      update: Сохранить
+    sure: Действительно удалить?      
+  buttons:
+    edit: Редактировать
+    destroy: Удалить
+    show: Показать
+    home: На главную
+    save: Сохранить
+    back: Назад
+    team: Команды
+    search: Поиск команды
+    champ_calendare: Календарь чемпионата
+    confirm:
+      user: Действительно удалить пользователя?
+      role: Действительно удалить роль?
+      team: Действительно удалить команду?
+      champ_calendare: Действительно удалить календарь?
+    new:
+      user: Новый пользователь
+      role: Новая роль
+      team: Новая команда
+      champ_calendare: Новый календарь
+    views:
+      pagination:
+      first: ⇤
+      last: ⇥
+      previous: ←
+      next: →
+      truncate: …
+  headers:
+    welcome:
+      privileges: Недостаточно привилегий!
+    users:
+      edit: Редактирование пользователя
+      new: Новый пользователь
+      index: Список пользователей
+    roles:
+      index: Список возможных ролей пользователей
+      edit: Редактирование роли
+      new: Новая роль
+    team:
+      index: Список команд
+      edit: Редактирование команды
+      new: Новая команда
+      panel: Доступные команды
+    champ_calendare:
+      index: Информация о расписании
+      edit: Редактирование календаря
+      new: Новый календарь
+      panel: Доступная информация
+    champ_racer:
+      index: Информация о гонщиках
+      edit: Редактирование гонщиков
+      new: Новая гонщик
+      search: Поиск гонщиков
+      
+  activerecord:
+    models:
+      team: Команда
+      user: Пользователь
+      champ_calendare: Календарь
+      champ_racer: Гонщики
+    attributes:
+      user:
+        email: Пользовательское имя/электронная почта
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        reset_password_email_sent_at: Дата отправления письма для смены пароля
+        activation_state: Статус активации
+        activation_token_expires_at: Дата прекращения действия токена активации
+        last_login_at: Время последнего входа в систему
+        role_users: Роли
+      champ_calendare:
+        champ_name: Название чемпионата
+        numb: Номер
+        start_date: Дата начала
+        country: Страна
+        place: Место проведения
+      team:
+        name: Имя Команды
+        engine_prod: Производитель двигателя
+        champ_racer: Гонщик 1
+        champ_racer1: Гонщик 2
+        numbr1: Номер 1
+        numbr2: Номер 2
+        country: Страна
+      champ_racer:
+        fn: Имя гонщика
+        sn: Фамилия
+        b_date: День рождения
+        country: Страна
+        win_rate: Колличество побед
+      champ_racer1:
+        fn: Имя гонщика
+        sn: Фамилия
+        b_date: День рождения
+        country: Страна
+        win_rate: Колличество побед
+      role:
+        name: Обозначение
+        info: Краткое название
+        full_info: Описание
+    errors:
+      models:
+        person:
+          attributes:
+            snils:
+              check_sum: имеет неправильную контрольную сумму
+          

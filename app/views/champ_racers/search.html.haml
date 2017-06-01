@@ -1,0 +1,116 @@
+=breadcrumb_tag do
+  %li.active
+    = link_to t('app.team'), teams_path
+  %li
+    = t('headers.champ_racer.search')
+
+.page-header
+  %h1= t('headers.champ_racer.search')
+
+
+.container
+  = form_tag(search_champ_racers_path(), :method => "get") do
+    .col-md-1
+
+    .col-md-5.my_head.c
+    .row
+      .col-md-12.my_head
+        Поиск по атрибутам команды
+    .row
+      .col-md-12.simple
+        .form-group
+          = label_tag 'search', t('activerecord.attributes.champ_racer.fn')
+          = text_field_tag 'search[fn]', params['search']['fn'], placeholder: "Введите имя гонщика", class: 'form-control'
+      .col-md-12
+        .form-group
+          = label_tag 'search', t('activerecord.attributes.champ_racer.sn')
+          = text_field_tag 'search[sn]', params['search']['sn'], placeholder: "Введите фамилию гонщика", class: 'form-control'
+
+
+    .row
+      .col-md-12.simple
+        .form-group
+          = label_tag 'search', t('activerecord.attributes.champ_racer.country')
+          = text_field_tag 'search[country]', params['search']['country'], placeholder: "Введите страну гонщика", class: 'form-control'
+    .row
+      .col-md-12.simple
+        .form-group
+          = label_tag 'search', t('activerecord.attributes.champ_racer.win_rate')
+          = number_field_tag 'search[win_rate]', params['search']['win_rate'], placeholder: "Введите колличество побед гонщика", class: 'form-control'
+    .row
+      .col-md-12.simple
+        .form-group
+          = label_tag 'search',  "Дата с"
+          .input-group.date.datepicker
+            = text_field_tag 'search[b_date1]', params['search']['b_date1'], placeholder: "Введите дату рождения", class: 'form-control'
+            %span.input-group-addon
+              %span.glyphicon.glyphicon-calendar
+    .row
+      .col-md-12.simple
+        .form-group
+          = label_tag 'search', "Дата по"
+          .input-group.date.datepicker
+            = text_field_tag 'search[b_date2]', params['search']['b_date2'], placeholder: "Введите дату рождения", class: 'form-control'
+            %span.input-group-addon
+              %span.glyphicon.glyphicon-calendar
+
+    .col-md-5.my_head.c
+    .row
+      .col-md-12.my_head
+        Поиск по атрибутам команды
+    .row
+      .col-md-12.simple
+        .form-group
+          = label_tag 'search', "Название команды"
+          = text_field_tag 'search[name]', params['search']['name'], placeholder: "Введите название команды", class: 'form-control'
+    .row
+      .col-md-12.simple
+        .form-group
+          = label_tag 'search', "Названия двигателя"
+          = text_field_tag 'search[engine_prod]', params['search']['engine_prod'], placeholder: "Введите производителя двигателя", class: 'form-control'
+    .row
+      .col-md-12.simple
+        .form-group
+          = label_tag 'search', "Номер 1"
+          = text_field_tag 'search[numbr1]', params['search']['numbr1'], placeholder: "Введите номер гонщика", class: 'form-control'
+    .row
+      .col-md-12.simple
+        .form-group
+          = label_tag 'search', "Номер 2"
+          = text_field_tag 'search[numbr2]', params['search']['numbr2'], placeholder: "Введите номер второго гонщика", class: 'form-control'
+       
+
+
+    = submit_tag(:search_button, value: 'Поиск', class: 'btn btn-default')
+    = link_to  teams_path, class: 'btn btn-warning' do
+      = fa_icon :backward
+      = t('buttons.back')
+    = link_to root_path, class: "btn btn-primary" do
+      = fa_icon "home"
+      = t('buttons.home')
+%table.table.table-hover.table-striped
+  %caption
+    %thead
+      %tr
+        %th
+          = t('activerecord.attributes.champ_racer.fn')
+        %th
+          = t('activerecord.attributes.attributes.champ_racer.sn')
+        %th
+          = t('activerecord.attributes.champ_racer.country')
+        %th
+          = t('activerecord.attributes.champ_racer.win_rate')
+        %th
+          = t('activerecord.attributes.champ_racer.b_date')
+    %tbody
+      - @champ_racers.each do |champ_racer|
+        %tr.table-active
+        %td.center= champ_racer.fn
+        %td.center= champ_racer.sn
+        %td.center= champ_racer.country
+        %td.center= champ_racer.win_rate
+        %td.center= champ_racer.b_date
+        %td.right
+          = link_to champ_racer, class: 'btn btn-info' do
+            = fa_icon "eye"
+            = t('buttons.show')

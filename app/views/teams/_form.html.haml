@@ -1,0 +1,111 @@
+= form_for @team do |f|
+  - if @team.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@team.errors.count, "error")} prohibited this team from being saved:"
+      %ul
+        - @team.errors.full_messages.each do |message|
+          %li= message
+
+  .container
+
+    .row
+      .col-md-6
+        .form-group
+          = f.label :name
+          = f.text_area :name, class: 'form-control'
+    .row
+      .col-md-6
+        .form-group
+          = f.label :engine_prod
+          = f.text_area :engine_prod, class: 'form-control'
+
+    .row
+      .col-md-6
+        .form-group
+          = f.label :numbr1
+          = f.number_field :numbr1, class: 'form-control'
+    .row
+      .col-md-6
+        .form-group
+          = f.label :numbr2
+          = f.number_field :numbr2, class: 'form-control'
+    .row
+      .col-md-6
+        .form-group
+          = f.label :country
+          = f.text_area :country
+    = f.fields_for :champ_racer do |fr|
+      .col-md-6
+        .panel.panel-success
+          .panel-heading
+            Гонщик 1
+          .panel-body
+            .row
+              .col-md-6
+                .form-group
+                  = fr.label :fn
+                  = fr.text_field :fn, class: 'form-control'
+            .row
+              .col-md-6
+                .form-group
+                  = fr.label :sn
+                  = fr.text_field :sn, class: 'form-control'
+            .row
+              .col-md-6
+                .form-group
+                  = fr.label :win_rate
+                  = fr.number_field :win_rate, class: 'form-control'
+            .row
+              .col-md-6
+                .form-group
+                  = fr.label :country
+                  = fr.text_area :country
+            .row
+              .col-md-6
+                .form-group
+                  = fr.label :b_date
+                  .input-group.date.datepicker
+                    = fr.text_field(:b_date, value: lnil(fr.object.b_date),
+                    class: 'form-control')
+                    %span.input-group-addon
+                      %span.glyphicon.glyphicon-calendar
+
+    = f.fields_for :champ_racer1 do |ff|
+      .col-md-6
+        .panel.panel-success
+          .panel-heading
+            Гонщик
+          .panel-body
+            .row
+              .col-md-6
+                .form-group
+                  = ff.label :fn
+                  = ff.text_field :fn, class: 'form-control'
+            .row
+              .col-md-6
+                .form-group
+                  = ff.label :sn
+                  = ff.text_field :sn, class: 'form-control'
+            .row
+              .col-md-6
+                .form-group
+                  = ff.label :win_rate
+                  = ff.number_field :win_rate, class: 'form-control'
+            .row
+              .col-md-6
+                .form-group
+                  = ff.label :country
+                  = ff.text_area :country
+            .row
+              .col-md-6
+                .form-group
+                  = ff.label :b_date
+                  .input-group.date.datepicker
+                    = ff.text_field(:b_date, value: lnil(ff.object.b_date),
+                    class: 'form-control')
+                    %span.input-group-addon
+                      %span.glyphicon.glyphicon-calendar
+
+
+        .from-control
+          = f.submit 'Сохранить', class: 'btn btn-primary'

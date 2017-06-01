@@ -1,0 +1,25 @@
+= form_for @champ_racer do |f|
+  - if @champ_racer.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@champ_racer.errors.count, "error")} prohibited this champ_racer from being saved:"
+      %ul
+        - @champ_racer.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :fn
+    = f.text_area :fn
+  .field
+    = f.label :sn
+    = f.text_area :sn
+  .field
+    = f.label :b_date
+    = f.date_select :b_date
+  .field
+    = f.label :country
+    = f.text_area :country
+  .field
+    = f.label :win_rate
+    = f.number_field :win_rate
+  .actions
+    = f.submit 'Save'

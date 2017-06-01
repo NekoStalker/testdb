@@ -1,0 +1,59 @@
+=breadcrumb_tag do
+  %li.active
+    = link_to t('app.team'), teams_path
+  %li
+    = @team.id
+.container
+  .row
+    .col-md-10
+      .panel.panel-default
+        .panel-heading
+        .panel-body
+          = link_to  edit_team_path(@team), class: 'btn btn-primary' do
+            = fa_icon :edit
+            = t('buttons.edit')
+          = link_to  teams_path, class: 'btn btn-warning' do
+            = fa_icon :backward
+            = t('buttons.back')
+        .list-group
+          %p.list-group-item
+            %b
+              = t('activerecord.attributes.team.name')
+            %span.badge
+              = @team.name
+          %p.list-group-item
+            %b
+              = t('activerecord.attributes.champ_racer.fn')
+            %span.badge
+              = @team.champ_racer.fn
+          %p.list-group-item
+            %b
+              = t('activerecord.attributes.champ_racer.sn')
+            %span.badge
+              = @team.champ_racer.sn
+          %p.list-group-item
+            %b
+              = t('activerecord.attributes.champ_racer1.fn')
+            %span.badge
+              = @team.champ_racer1.fn
+          %p.list-group-item
+            %b
+              = t('activerecord.attributes.champ_racer1.sn')
+            %span.badge
+              = @team.champ_racer1.sn
+          %p.list-group-item
+            %b
+              = t('activerecord.attributes.team.numbr1')
+            %span.badge
+              = @team.numbr1
+          %p.list-group-item
+            %b
+              = t('activerecord.attributes.team.numbr2')
+            %span.badge
+              = @team.numbr2
+          %p.list-group-item
+            %b
+              = t('activerecord.attributes.team.country')
+            %span.badge
+              = @team.country
+         
