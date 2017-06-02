@@ -21,8 +21,8 @@ class ChampRacer < ActiveRecord::Base
     if params['numbr2'].present?
       result = result.where(teams: {numbr2: params['numbr2']}) + (result.where(teams1s_champ_racers: {numbr2: params['numbr2']}))
     end
-    if params['country'].present?
-      result = result.where(teams: {country: params['country']}) + (result.where(teams1s_champ_racers: {country: params['country']}))
+    if params['team_country'].present?
+      result = result.where(teams: {country: params['team_country']}) + (result.where(teams1s_champ_racers: {country: params['team_country']}))
     end
     if params['fn'].present?
       result = result.where(fn: params['fn'])

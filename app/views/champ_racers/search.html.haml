@@ -78,6 +78,11 @@
         .form-group
           = label_tag 'search', "Номер 2"
           = text_field_tag 'search[numbr2]', params['search']['numbr2'], placeholder: "Введите номер второго гонщика", class: 'form-control'
+    .row
+      .col-md-12.simple
+        .form-group
+          = label_tag 'search', "Страна команды"
+          = text_field_tag 'search[team_country]', params['search']['team_country'], placeholder: "Введите страну команды", class: 'form-control'
        
 
 
